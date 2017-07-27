@@ -29,7 +29,7 @@
 2. Run `bundle install`
 3. Create database: `rake db:create`
 4. Migrate database: `rake db:migrate`
-5. Setup seeds data: `rake db:setup`
+5. Setup seeds data: `rake db:seed`
 
 ## API Reference
 
