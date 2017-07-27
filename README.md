@@ -38,8 +38,3 @@
 
 ## Tests
 Do some tests for make sure it works properly.
-
-
-READ ME
-Host name:  https://rth-recruitment.herokuapp.com/api
-App token (set on header as X-App-Token):  76524a53ee60602ac3528f38
