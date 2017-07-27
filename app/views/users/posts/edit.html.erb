@@ -1,0 +1,4 @@
+<% provide(:page_title, @post.title) %>
+<% provide(:user_active, 'active') %>
+
+<%= render 'form', post: @post, url: users_post_path(@post) %>

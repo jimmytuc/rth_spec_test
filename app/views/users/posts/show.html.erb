@@ -1,0 +1,29 @@
+<% provide(:page_title, @post.title) %>
+<% provide(:user_active, 'active') %>
+
+<div>
+  <%= link_to 'Edit', edit_users_post_path(@post), class: 'btn btn-sm btn-warning' %>&nbsp;
+  <%= link_to 'Delete', users_posts_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+</div>
+<div class="row">
+  <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
+    <h1><%= @post.title %></h1>
+    <p><%= @post.display_day_created%></p>
+    <%= @post.body.html_safe %>
+  </div>
+</div>
+
+<hr>
+<div class="row">
+  <%= render 'comments/comment' %>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+      <div class="col-md-3">
+          <div class="actions">
+              <%= link_to 'Back', users_posts_path, class: 'btn btn-sm btn-secondary' %>
+          </div>
+      </div>
+  </div>
+</div>

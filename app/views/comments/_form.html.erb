@@ -1,0 +1,19 @@
+<%= form_for([@post, @post.comments.build]) do |f|%>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="field">
+                <%= f.text_area :content, class: 'form-control' %>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="col-md-3">
+                <div class="actions">
+                    <%= f.submit 'Post', class: 'btn btn-primary btn-block'%>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<% end %>

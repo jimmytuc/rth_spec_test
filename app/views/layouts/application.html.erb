@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:page_title)%> - Robust App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <%= render 'layouts/navbar' %>
+    <div class="container-fluid <%= controller_name %> <%= action_name %>">
+      <div class="jumbotron">
+        <h1 class="title">THIS IS A BLOG</h1>
+      </div>
+
+      <% if notice.present? %>
+      <div class="alert alert-info" role="alert">
+        <strong>Info!</strong> <%= notice %>.
+      </div>
+      <% end %>
+
+      <% if alert.present? %>
+      <div class="alert alert-warning" role="alert">
+        <strong>Warning!</strong> <%= alert %>.
+      </div>
+      <% end %>
+
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<% provide(:page_title, 'All Posts') %>
+<% provide(:post_active, 'active') %>
+
+<div class="row">
+  <div class="col-md-4">
+    Sort by: <%= link_to 'Newest', posts_path(:dir => 'latest'), class: "btn btn-sm btn-secondary" %> 
+    | <%= link_to 'Oldest', posts_path(:dir => 'oldest'), class: 'btn btn-sm btn-secondary'%>
+  </div>
+</div>
+<br>
+<div class="row">
+  <%= render @posts %>
+</div>

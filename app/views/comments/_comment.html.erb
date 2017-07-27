@@ -1,0 +1,23 @@
+
+<div class="col-md-8 offset-md-1 col-lg-8 offset-lg-2">
+    <h5>- Comments -</h5>
+        
+    <% @comments.each do |c| %>
+
+        <blockquote class="blockquote blockquote-reverse">
+            <p class="lead"><%= c.content %></p>
+            <footer class="blockquote-footer">Posted by: <cite title="<%= c.user.name %>"><%= c.user.name %></cite></footer>
+            <%= link_to 'Remove', [c.post, c], method: :delete, class: 'btn btn-sm btn-danger'%>
+        </blockquote>
+        
+    <% end %>
+    <hr>
+    <div>
+        <h6>Post new comment</h6>
+        <% if user_signed_in? %>
+            <%= render 'comments/form' %>
+        <% else %>
+            <p>Please <%= link_to 'Sign in', users_post_path(@post)%> to post your comment.</p>
+        <% end %>
+    </div>
+</div>

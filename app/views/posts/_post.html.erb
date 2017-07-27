@@ -1,0 +1,16 @@
+<div class="col-sm-6 col-lg-4">
+    <div class="card">
+        <!-- header -->
+        <%= link_to post do %>
+            <div class="card-topper" style='background-image: url(<%= post.image_url %>);'></div>
+        <% end %>
+        <!-- body -->
+        <div class="card-block">
+            <h4 class="card-title"><%= post.title %></h4>
+            <h6 class="published-date"><%= post.display_day_created %></h6>
+            <%= link_to post do %>
+                <p class="card-text"><%= truncate(post.description, length: 130) %></p>
+            <% end %>
+        </div>
+    </div>
+</div>
